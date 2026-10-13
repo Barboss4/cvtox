@@ -879,3 +879,39 @@ a.sponsor-card:hover {
     padding: 14px 18px;
   }
 }
+
+
+/* Logo principal */
+.hero .logo-orbit {
+  width: min(500px, 90vw);
+}
+
+.hero .logo-orbit img {
+  width: 80%;
+}
+
+/* Espaçamento entre logo e conteúdo */
+.hero-inner {
+  gap: 24px;
+  padding-top: 55px;
+  padding-bottom: 70px;
+}
+
+/* Versão para celular */
+@media (max-width: 680px) {
+  .hero .logo-orbit {
+    width: min(320px, 90vw);
+  }
+
+  .hero .logo-orbit img {
+    width: 80%;
+  }
+
+  .hero-inner {
+    gap: 20px;
+    padding-top: 40px;
+    padding-bottom: 55px;
+  }
+}
+
+
