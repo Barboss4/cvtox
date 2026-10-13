@@ -833,3 +833,49 @@ a.sponsor-card:hover {
     width: 78%;
   }
 }
+
+
+
+/* ==========================================
+   AUMENTAR LETRAS DA PÁGINA INICIAL
+   ========================================== */
+
+/* Descrição do evento */
+.hero .hero-copy > p {
+  font-size: 1.45rem;
+  line-height: 1.7;
+  max-width: 1050px;
+}
+
+/* Data e local */
+.hero .pill {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  padding: 14px 20px;
+}
+
+/* Botões de inscrição e programação */
+.hero .btn {
+  font-size: 1.2rem;
+  font-weight: 800;
+  padding: 16px 26px;
+  min-height: 58px;
+}
+
+/* Ajustes para celular */
+@media (max-width: 680px) {
+  .hero .hero-copy > p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
+
+  .hero .pill {
+    font-size: 1.05rem;
+    padding: 12px 16px;
+  }
+
+  .hero .btn {
+    font-size: 1.05rem;
+    padding: 14px 18px;
+  }
+}
