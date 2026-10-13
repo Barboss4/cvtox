@@ -90,7 +90,7 @@ speakers: [
     name: "Agatha Beatriz M. de Souza",
     role: "LabTox-UnB",
     talk: "Determinação de canabinoides em plantas e óleos por LC-MS/MS",
-    photo: "assets/img/agatha-beatriz-de-souza.png",
+    photo: "assets/img/Agatha.png",
     url: ""
   },
 
