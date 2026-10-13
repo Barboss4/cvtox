@@ -36,13 +36,14 @@ window.CVTOX_DATA = {
     }
   ],
 
+
 speakers: [
   {
-    name: "Dr. Beren Atac-Wagegg",
-    role: "German Federal Institute for Risk Assessment",
+    name: "Prof. Dr. Sue Gibbs",
+    role: "Department of Molecular Cell Biology – Amsterdam University Medical Center",
     talk: "NAMs",
-    photo: "assets/img/beren-atac-wagegg.png",
-    url: "https://www.google.com"
+    photo: "assets/img/sue-gibbs.png",
+    url: ""
   },
 
   {
@@ -71,7 +72,7 @@ speakers: [
 
   {
     name: "Prof. Angélica Amorim Amato",
-    role: "UnB",
+    role: "Departamento de Farmácia – UnB",
     talk: "Disruptores endócrinos",
     photo: "assets/img/angelica-amorim-amato.png",
     url: ""
@@ -110,9 +111,9 @@ speakers: [
   },
 
   {
-    name: "Iuri Barbosa Pereira",
+    name: "Iuri Pereira",
     role: "LabTox-UnB",
-    talk: "Construindo um Modelo de Predição: Princípios e Variáveis",
+    talk: "A ser definido",
     photo: "assets/img/iuri-barbosa-pereira.png",
     url: ""
   },
@@ -120,7 +121,7 @@ speakers: [
   {
     name: "Peter Rembischevski",
     role: "ANVISA",
-    talk: "Poluentes Orgânicos Persistentes (POPs)",
+    talk: "Poluentes orgânicos persistentes (POPs)",
     photo: "assets/img/peter-rembischevski.png",
     url: ""
   },
@@ -142,13 +143,15 @@ speakers: [
   },
 
   {
-    name: "Prof. Raphael",
+    name: "Prof. Antônio Raphael Teixeira Neto",
     role: "FAV-UnB",
     talk: "Cannabis para uso animal",
     photo: "assets/img/raphael.png",
     url: ""
   }
 ],
+
+
 
 schedule: [
   {
@@ -158,8 +161,8 @@ schedule: [
       {
         time: "08:30–10:00",
         title: "NAMs",
-        speaker: "Dr. Beren Atac-Wagegg",
-        institution: "German Federal Institute for Risk Assessment",
+        speaker: "Prof. Dr. Sue Gibbs",
+        institution: "Amsterdam University Medical Center",
         type: "Aula"
       },
       {
@@ -181,7 +184,7 @@ schedule: [
       },
       {
         time: "14:00–15:30",
-        title: "Construindo um Modelo de predição: Principios e Variaveis.",
+        title: "A ser definido",
         speaker: "Iuri Pereira",
         institution: "LabTox-UnB",
         type: "Aula"
@@ -231,7 +234,7 @@ schedule: [
       },
       {
         time: "14:00–15:30",
-        title: "Poluentes Orgânicos Persistentes (POPs)",
+        title: "Poluentes orgânicos persistentes (POPs)",
         speaker: "Peter Rembischevski",
         institution: "ANVISA",
         type: "Aula"
@@ -259,7 +262,7 @@ schedule: [
         time: "08:30–10:00",
         title: "Disruptores endócrinos",
         speaker: "Prof. Angélica Amorim Amato",
-        institution: "UnB",
+        institution: "Departamento de Farmácia – UnB",
         type: "Aula"
       },
       {
@@ -270,7 +273,7 @@ schedule: [
       {
         time: "10:30–12:00",
         title: "Estudos pré-clínicos para registro de medicamentos",
-        speaker: "A definir",
+        speaker: "A ser definido",
         institution: "ANVISA",
         type: "Aula"
       },
@@ -281,15 +284,22 @@ schedule: [
       },
       {
         time: "14:00–15:30",
-        title: "Cannabis para uso animal",
-        speaker: "Pr. Raphael",
-        institution: "FAV-UnB",
+        title: "A ser definido",
+        speaker: "A ser definido",
+        institution: "",
         type: "Aula"
       },
       {
         time: "15:30–16:00",
         title: "Intervalo",
         type: "Intervalo"
+      },
+      {
+        time: "16:00–17:30",
+        title: "A ser definido",
+        speaker: "A ser definido",
+        institution: "",
+        type: "Aula"
       }
     ]
   },
@@ -324,15 +334,22 @@ schedule: [
       },
       {
         time: "14:00–15:30",
-        title: "Anabolizantes",
-        speaker: "A definir",
-        institution: "",
+        title: "Cannabis para uso animal",
+        speaker: "Prof. Antônio Raphael Teixeira Neto",
+        institution: "FAV-UnB",
         type: "Aula"
       },
       {
         time: "15:30–16:00",
         title: "Intervalo",
         type: "Intervalo"
+      },
+      {
+        time: "16:00–17:30",
+        title: "A ser definido",
+        speaker: "A ser definido",
+        institution: "",
+        type: "Aula"
       }
     ]
   },
@@ -366,6 +383,18 @@ schedule: [
         type: "Almoço"
       },
       {
+        time: "14:00–15:30",
+        title: "A ser definido",
+        speaker: "A ser definido",
+        institution: "",
+        type: "Aula"
+      },
+      {
+        time: "15:30–16:00",
+        title: "Intervalo",
+        type: "Intervalo"
+      },
+      {
         time: "16:00–17:30",
         title: "Encerramento",
         type: "Encerramento"
@@ -373,6 +402,7 @@ schedule: [
     ]
   }
 ],
+
 
 committee: [
   {
