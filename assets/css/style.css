@@ -812,3 +812,24 @@ a.sponsor-card:hover {
   }
 }
 
+
+/* Aumentar o logo principal do CVTox */
+.hero .logo-orbit {
+  width: min(450px, 85vw);
+}
+
+/* Aumentar a imagem dentro do círculo */
+.hero .logo-orbit img {
+  width: 78%;
+}
+
+/* Ajuste para celulares */
+@media (max-width: 680px) {
+  .hero .logo-orbit {
+    width: min(330px, 90vw);
+  }
+
+  .hero .logo-orbit img {
+    width: 78%;
+  }
+}
