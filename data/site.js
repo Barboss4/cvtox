@@ -408,7 +408,7 @@ committee: [
   {
     name: "Eloisa",
     role: "Coordenadora",
-    photo: "assets/img/eloisa.png"
+    photo: "assets/img/Eloisa.png"
   },
   {
     name: "Iuri",
@@ -418,22 +418,22 @@ committee: [
   {
     name: "Aline",
     role: "Organização",
-    photo: "assets/img/aline.png"
+    photo: "assets/img/Aline.png"
   },
   {
     name: "Larissa",
     role: "Organização",
-    photo: "assets/img/larissa.png"
+    photo: "assets/img/Larissa.png"
   },
   {
     name: "Agatha",
     role: "Divulgação",
-    photo: "assets/img/agatha.png"
+    photo: "assets/img/Agatha.png"
   },
   {
     name: "Marcela",
     role: "Fotografia",
-    photo: "assets/img/marcela.png"
+    photo: "assets/img/Marcela.png"
   }
 ],
 
