@@ -437,6 +437,8 @@ committee: [
   }
 ],
 
+posters: [],
+
 sponsors: [
   {
     name: "Universidade de Brasília",
@@ -451,19 +453,6 @@ sponsors: [
     url: "https://www.toxicologia.unb.br/textos.php?id=9&nome=olaboratorio"
   },
 
-  {
-    name: "Nome do patrocinador",
-    category: "Patrocínio",
-    logo: "assets/img/patrocinadores/patrocinador-1.png",
-    url: ""
-  },
-
-  {
-    name: "Nome do apoiador",
-    category: "Apoio",
-    logo: "assets/img/patrocinadores/apoiador-1.png",
-    url: ""
-  }
 ],
 
 

@@ -14,6 +14,7 @@
 
   const links = [
     ["home", "Início", `${base}index.html`],
+    ...(data.posters?.length ? [["posteres", "Pôsteres", `${base}index.html#posteres`]] : []),
     ["programacao", "Programação", `${base}programacao.html`],
     ["palestrantes", "Palestrantes", `${base}palestrantes.html`],
     ["inscricoes", "Inscrições", `${base}inscricoes.html`],
@@ -87,6 +88,81 @@
   setText("[data-event-location]", data.event.location);
   setText("[data-event-city]", data.event.city);
   setText("[data-event-description]", data.event.description);
+
+  const hero = document.querySelector(".hero");
+  const heroRatioOutput = document.querySelector("[data-hero-ratio-output]");
+  const heroReset = document.querySelector("[data-hero-reset]");
+  const heroControls = Object.fromEntries(
+    [...document.querySelectorAll("[data-control]")].map(control => [control.dataset.control, control])
+  );
+  const heroDefaults = {
+    imageSize: 550, panelWidth: 900, fontSize: 23, overlap: 72,
+    padding: 38, elementsGap: 24, buttonsGap: 14, imageY: 0,
+    radius: 28, shadow: 18, blur: 12, opacity: 68,
+    bgStart: "#071c53", bgEnd: "#344972", panelColor: "#071c53",
+    align: "center", showDate: true, showLocation: true, showButtons: true
+  };
+  const heroStorageKey = "cvtox-hero-editor-v2";
+  if (hero && Object.keys(heroControls).length) {
+    const setControlValues = values => Object.entries(values).forEach(([key, value]) => {
+      const control = heroControls[key];
+      if (!control) return;
+      if (control.type === "checkbox") control.checked = Boolean(value);
+      else control.value = value;
+    });
+    const getControlValues = () => Object.fromEntries(Object.entries(heroControls).map(([key, control]) => [
+      key, control.type === "checkbox" ? control.checked : control.value
+    ]));
+    const hexToRgba = (hex, opacity) => {
+      const color = Number.parseInt(hex.slice(1), 16);
+      return `rgba(${color >> 16},${color >> 8 & 255},${color & 255},${opacity})`;
+    };
+    const updateHeroEditor = () => {
+      const values = getControlValues();
+      const imageRatio = Math.round(Number(values.imageSize) / (Number(values.imageSize) + Number(values.panelWidth)) * 100);
+      hero.style.setProperty("--hero-image-size", `${values.imageSize}px`);
+      hero.style.setProperty("--hero-panel-width", `${values.panelWidth}px`);
+      hero.style.setProperty("--hero-text-size", `${values.fontSize}px`);
+      hero.style.setProperty("--hero-overlap", `-${values.overlap}px`);
+      hero.style.setProperty("--hero-panel-padding", `${values.padding}px`);
+      hero.style.setProperty("--hero-elements-gap", `${values.elementsGap}px`);
+      hero.style.setProperty("--hero-buttons-gap", `${values.buttonsGap}px`);
+      hero.style.setProperty("--hero-image-y", `${values.imageY}px`);
+      hero.style.setProperty("--hero-radius", `${values.radius}px`);
+      hero.style.setProperty("--hero-shadow-opacity", Number(values.shadow) / 100);
+      hero.style.setProperty("--hero-blur", `${values.blur}px`);
+      hero.style.setProperty("--hero-panel-background", hexToRgba(values.panelColor, Number(values.opacity) / 100));
+      hero.style.setProperty("--hero-bg-start", values.bgStart);
+      hero.style.setProperty("--hero-bg-end", values.bgEnd);
+      hero.classList.toggle("hero-align-left", values.align === "left");
+      const datePill = hero.querySelector("[data-event-date]")?.closest(".pill");
+      const locationPill = hero.querySelector("[data-event-location]")?.closest(".pill");
+      const meta = hero.querySelector(".hero-meta");
+      const actions = hero.querySelector(".hero-copy .actions");
+      if (datePill) datePill.hidden = !values.showDate;
+      if (locationPill) locationPill.hidden = !values.showLocation;
+      if (meta) meta.hidden = !values.showDate && !values.showLocation;
+      if (actions) actions.hidden = !values.showButtons;
+      if (heroRatioOutput) heroRatioOutput.textContent = `Imagem ${imageRatio}% · Texto ${100 - imageRatio}%`;
+      document.querySelectorAll("[data-output]").forEach(output => {
+        const key = output.dataset.output;
+        const suffix = ["shadow", "opacity"].includes(key) ? "%" : "px";
+        output.textContent = `${values[key]}${suffix}`;
+      });
+      try { localStorage.setItem(heroStorageKey, JSON.stringify(values)); } catch {}
+    };
+    try {
+      const saved = JSON.parse(localStorage.getItem(heroStorageKey));
+      setControlValues({ ...heroDefaults, ...(saved || {}) });
+    } catch {}
+    Object.values(heroControls).forEach(control => control.addEventListener("input", updateHeroEditor));
+    heroReset?.addEventListener("click", () => {
+      setControlValues(heroDefaults);
+      updateHeroEditor();
+    });
+    updateHeroEditor();
+  }
+
   setText(
   "[data-registration-price]",
   data.event.registrationPrice
@@ -111,6 +187,20 @@ setText(
         <h3>${esc(item.title)}</h3>
         <p>${esc(item.text)}</p>
       </article>`).join("");
+  }
+
+  const posterSection = document.querySelector("[data-posters-section]");
+  const posters = document.querySelector("[data-posters]");
+  const posterItems = (data.posters || [])
+    .filter(item => item.image && item.edition && item.year)
+    .sort((a, b) => Number(b.year) - Number(a.year));
+  if (posterSection && posters && posterItems.length) {
+    posters.innerHTML = posterItems.map(item => `
+      <a class="poster-card" href="${esc(item.image)}" target="_blank" rel="noopener">
+        <img src="${esc(item.image)}" alt="Pôster da ${esc(item.edition)}, ${esc(item.year)}" loading="lazy" />
+        <span><strong>${esc(item.edition)}</strong><small>${esc(item.year)}</small></span>
+      </a>`).join("");
+    posterSection.hidden = false;
   }
 
   const speakers = document.querySelector("[data-speakers]");
