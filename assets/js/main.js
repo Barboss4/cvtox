@@ -14,7 +14,7 @@
 
   const links = [
     ["home", "Início", `${base}index.html`],
-    ...(data.posters?.length ? [["posteres", "Pôsteres", `${base}index.html#posteres`]] : []),
+    ["posteres", "Pôsteres", `${base}posteres.html`],
     ["programacao", "Programação", `${base}programacao.html`],
     ["palestrantes", "Palestrantes", `${base}palestrantes.html`],
     ["inscricoes", "Inscrições", `${base}inscricoes.html`],
