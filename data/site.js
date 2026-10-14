@@ -132,7 +132,7 @@ speakers: [
     role: "German Federal Institute for Risk Assessment",
     talk: "Comunicação de risco",
     photo: "assets/img/claudio-canales.png",
-    url: ""
+    url: "https://creativebureaucracy.org/foundation/people/claudio-canales"
   },
 
   {
@@ -148,7 +148,7 @@ speakers: [
     role: "Faculdade de Agronomia e Medicina Veterinária – Universidade de Brasília",
     talk: "Cannabis para uso em animais",
     photo: "assets/img/raphael.png",
-    url: ""
+    url: "http://lattes.cnpq.br/2368985735640767"
   }
 ],
 
