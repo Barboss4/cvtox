@@ -37,97 +37,98 @@ window.CVTOX_DATA = {
   ],
 
 
+
 speakers: [
   {
-    name: "Prof. Dr. Sue Gibbs",
-    role: "Department of Molecular Cell Biology – Amsterdam University Medical Center",
-    talk: "NAMs",
+    name: "Profª. Drª. Sue Gibbs",
+    role: "Department of Molecular Cell Biology – Amsterdam University Medical Center, Holanda",
+    talk: "New Approach Metodologies (NAMs)",
     photo: "assets/img/sue-gibbs.png",
-    url: ""
+    url: "https://pure.amsterdamumc.nl/en/persons/susan-gibbs/"
   },
 
   {
-    name: "Prof. John Colbourne",
-    role: "University of Birmingham, Reino Unido",
+    name: "Prof. Dr. John Colbourne",
+    role: "School of Biosciences – University of Birmingham, Reino Unido",
     talk: "Precision Toxicology",
     photo: "assets/img/john-colbourne.png",
-    url: ""
+    url: "https://www.birmingham.ac.uk/staff/profiles/biosciences/colbourne-john"
   },
 
   {
-    name: "Jonas Paschoal",
-    role: "USP",
+    name: "Prof. Dr. Jonas Paschoal",
+    role: "Departamento de Toxicologia – Universidade de São Paulo (USPRP)",
     talk: "Resíduos e contaminantes em peixes",
     photo: "assets/img/jonas-paschoal.png",
-    url: ""
+    url: "http://lattes.cnpq.br/3099044430035756"
   },
 
   {
-    name: "Larissa Silva",
-    role: "LabTox-UnB",
-    talk: "Pesticida em alimentos processados",
+    name: "Me. Larissa Silva",
+    role: "Laboratório de Toxicologia – Universidade de Brasília",
+    talk: "Pesticidas em alimentos processados",
     photo: "assets/img/larissa-silva.png",
     url: ""
   },
 
   {
-    name: "Prof. Angélica Amorim Amato",
-    role: "Departamento de Farmácia – UnB",
+    name: "Profª. Drª. Angélica Amorim Amato",
+    role: "Departamento de Farmácia – Universidade de Brasília",
     talk: "Disruptores endócrinos",
     photo: "assets/img/angelica-amorim-amato.png",
-    url: ""
+    url: "http://lattes.cnpq.br/7368047039349168"
   },
 
   {
-    name: "Sabrina Bartz Pereira",
-    role: "Departamento de Botânica – UnB",
+    name: "Me. Sabrina Bartz Pereira",
+    role: "Departamento de Botânica – Universidade de Brasília",
     talk: "Influência das condições de cultivo nos padrões de crescimento da Cannabis",
     photo: "assets/img/sabrina-bartz-pereira.png",
-    url: ""
+    url: "http://lattes.cnpq.br/5448656144786617"
   },
 
   {
     name: "Agatha Beatriz M. de Souza",
-    role: "LabTox-UnB",
+    role: "Laboratório de Toxicologia – Universidade de Brasília",
     talk: "Determinação de canabinoides em plantas e óleos por LC-MS/MS",
     photo: "assets/img/Agatha.png",
-    url: ""
+    url: "http://lattes.cnpq.br/3483072173940735"
   },
 
   {
-    name: "Ettore Ferrari Jr.",
-    role: "Polícia Civil do DF",
-    talk: "Novas substâncias psicoativas: O que há de novo?",
+    name: "Dr. Ettore Ferrari Jr.",
+    role: "Polícia Civil do Distrito Federal",
+    talk: "Novas Substâncias Psicoativas: o que há de novo?",
     photo: "assets/img/ettore-ferrari-jr.png",
-    url: ""
+    url: "http://lattes.cnpq.br/4223149439240964"
   },
 
   {
-    name: "Diana Brito da Justa Neves",
+    name: "Dr. Diana Brito da Justa Neves",
     role: "Polícia Federal",
     talk: "Falsificação de medicamentos",
     photo: "assets/img/diana-brito-da-justa-neves.png",
-    url: ""
+    url: "http://lattes.cnpq.br/1015123948704942"
   },
 
   {
-    name: "Iuri Pereira",
-    role: "LabTox-UnB",
+    name: "Me. Iuri Pereira",
+    role: "Laboratório de Toxicologia – Universidade de Brasília",
     talk: "A ser definido",
     photo: "assets/img/iuri-barbosa-pereira.png",
-    url: ""
+    url: "http://lattes.cnpq.br/1963306207676404"
   },
 
   {
-    name: "Peter Rembischevski",
-    role: "ANVISA",
-    talk: "Poluentes orgânicos persistentes (POPs)",
+    name: "Dr. Peter Rembischevski",
+    role: "Agência Nacional de Vigilância Sanitária (ANVISA)",
+    talk: "Poluentes Orgânicos Persistentes (POPs)",
     photo: "assets/img/peter-rembischevski.png",
-    url: ""
+    url: "http://lattes.cnpq.br/6347603374412945"
   },
 
   {
-    name: "Claudio Canales",
+    name: "Prof. Dr. Claudio Canales",
     role: "German Federal Institute for Risk Assessment",
     talk: "Comunicação de risco",
     photo: "assets/img/claudio-canales.png",
@@ -135,7 +136,7 @@ speakers: [
   },
 
   {
-    name: "Sara Monteiro",
+    name: "Profª. Drª. Sara Monteiro",
     role: "Technical University of Denmark, Dinamarca",
     talk: "Risco/benefício",
     photo: "assets/img/sara-monteiro.png",
@@ -143,13 +144,14 @@ speakers: [
   },
 
   {
-    name: "Prof. Antônio Raphael Teixeira Neto",
-    role: "FAV-UnB",
-    talk: "Cannabis para uso animal",
+    name: "Prof. Dr. Antônio Raphael Teixeira Neto",
+    role: "Faculdade de Agronomia e Medicina Veterinária – Universidade de Brasília",
+    talk: "Cannabis para uso em animais",
     photo: "assets/img/raphael.png",
     url: ""
   }
 ],
+
 
 
 
