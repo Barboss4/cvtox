@@ -17,10 +17,9 @@
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <p data-event-description></p>
           <div class="hero-meta">
-            <span class="pill">📅 <span data-event-date></span></span>
-            <span class="pill">📍 <span data-event-location></span></span>
+            <span class="pill"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v3M17 3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Z" /></svg><span data-event-date></span></span>
+            <span class="pill"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" /></svg><span data-event-location></span></span>
           </div>
           <div class="actions">
             <a class="btn btn-primary" href="inscricoes.html"> Ver informações de inscrição </a>
@@ -28,41 +27,9 @@
           </div>
         </div>
         <div class="hero-mark" aria-hidden="true">
-          <div class="logo-orbit"><img src="assets/img/cvtox-logo.png" alt="" /></div>
+          <div class="logo-orbit"><img data-hero-logo alt="" /></div>
         </div>
       </div>
-      <details class="hero-tuner">
-        <summary>Editor visual do topo</summary>
-        <p class="hero-ratio-readout">Proporção atual: <output data-hero-ratio-output>Imagem 38% · Texto 62%</output></p>
-        <fieldset><legend>Dimensões e espaçamento</legend><div class="hero-tuner-grid">
-          <label for="hero-image-size"><span>Imagem <output data-output="imageSize">550px</output></span><input id="hero-image-size" data-control="imageSize" type="range" min="320" max="720" value="550" /></label>
-          <label for="hero-panel-width"><span>Largura do painel <output data-output="panelWidth">900px</output></span><input id="hero-panel-width" data-control="panelWidth" type="range" min="560" max="1100" value="900" /></label>
-          <label for="hero-font"><span>Fonte <output data-output="fontSize">23px</output></span><input id="hero-font" data-control="fontSize" type="range" min="16" max="30" value="23" /></label>
-          <label for="hero-overlap"><span>Sobreposição <output data-output="overlap">72px</output></span><input id="hero-overlap" data-control="overlap" type="range" min="0" max="140" value="72" /></label>
-          <label for="hero-padding"><span>Espaçamento interno <output data-output="padding">38px</output></span><input id="hero-padding" data-control="padding" type="range" min="20" max="70" value="38" /></label>
-          <label for="hero-elements-gap"><span>Distância dos elementos <output data-output="elementsGap">24px</output></span><input id="hero-elements-gap" data-control="elementsGap" type="range" min="8" max="60" value="24" /></label>
-          <label for="hero-buttons-gap"><span>Distância dos botões <output data-output="buttonsGap">14px</output></span><input id="hero-buttons-gap" data-control="buttonsGap" type="range" min="0" max="40" value="14" /></label>
-          <label for="hero-image-y"><span>Posição vertical da imagem <output data-output="imageY">0px</output></span><input id="hero-image-y" data-control="imageY" type="range" min="-120" max="120" value="0" /></label>
-        </div></fieldset>
-        <fieldset><legend>Acabamento</legend><div class="hero-tuner-grid">
-          <label for="hero-radius"><span>Arredondamento <output data-output="radius">28px</output></span><input id="hero-radius" data-control="radius" type="range" min="0" max="48" value="28" /></label>
-          <label for="hero-shadow"><span>Sombra <output data-output="shadow">18%</output></span><input id="hero-shadow" data-control="shadow" type="range" min="0" max="45" value="18" /></label>
-          <label for="hero-blur"><span>Desfoque <output data-output="blur">12px</output></span><input id="hero-blur" data-control="blur" type="range" min="0" max="30" value="12" /></label>
-          <label for="hero-opacity"><span>Opacidade do painel <output data-output="opacity">68%</output></span><input id="hero-opacity" data-control="opacity" type="range" min="20" max="100" value="68" /></label>
-        </div></fieldset>
-        <fieldset><legend>Cores e alinhamento</legend><div class="hero-tuner-grid hero-tuner-options">
-          <label for="hero-bg-start"><span>Cor inicial</span><input id="hero-bg-start" data-control="bgStart" type="color" value="#071c53" /></label>
-          <label for="hero-bg-end"><span>Cor final</span><input id="hero-bg-end" data-control="bgEnd" type="color" value="#344972" /></label>
-          <label for="hero-panel-color"><span>Cor do painel</span><input id="hero-panel-color" data-control="panelColor" type="color" value="#071c53" /></label>
-          <label for="hero-align"><span>Alinhamento</span><select id="hero-align" data-control="align"><option value="center">Centralizado</option><option value="left">À esquerda</option></select></label>
-        </div></fieldset>
-        <fieldset><legend>Elementos visíveis</legend><div class="hero-tuner-checks">
-          <label><input data-control="showDate" type="checkbox" checked /> Data</label>
-          <label><input data-control="showLocation" type="checkbox" checked /> Local</label>
-          <label><input data-control="showButtons" type="checkbox" checked /> Botões</label>
-        </div></fieldset>
-        <button class="hero-tuner-reset" type="button" data-hero-reset>Restaurar padrão</button>
-      </details>
     </section>
 
     <section class="section">

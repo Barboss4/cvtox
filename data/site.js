@@ -8,7 +8,7 @@ window.CVTOX_DATA = {
     title: "Curso de Verão de Toxicologia",
     subtitle: "Ciência, formação e conexão em Toxicologia",
     date: "08 a 12 de março de 2027",
-    location: "Auditório 3 da Faculdade de Ciências da Saúde – UnB",
+    location: "FS - UnB",
     city: "Brasília – DF",
     description:
    "O CVTox reúne estudantes, pesquisadores e profissionais para discutir temas atuais em Toxicologia por meio de aulas, debates e atividades de integração.",
