@@ -31,6 +31,8 @@ button, input, textarea { font: inherit; }
 
 .container { width: min(calc(100% - 32px), var(--container)); margin-inline: auto; }
 .section { padding: clamp(64px, 8vw, 108px) 0; }
+body[data-page="home"] main > .section { padding-block: clamp(44px, 5vw, 72px); }
+body[data-page="home"] .section-head { margin-bottom: 24px; }
 .section-soft { background: var(--mist); }
 .section-dark { color: var(--white); background: linear-gradient(135deg, var(--navy-950), var(--navy-800)); }
 
@@ -349,7 +351,7 @@ button, input, textarea { font: inherit; }
 .speaker-name-link:hover {
   text-decoration: underline;
 }
-.carousel-nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 20px; }
+.carousel-nav { display: flex; align-items: center; justify-content: flex-end; gap: 18px; margin-top: 20px; }
 .carousel-hint { color: var(--muted); font-size: .9rem; }
 .carousel-controls { display: flex; align-items: center; gap: 10px; }
 .carousel-btn {
@@ -415,6 +417,7 @@ button, input, textarea { font: inherit; }
 }
 
 @media (max-width: 680px) {
+  body[data-page="home"] main > .section { padding-block: 38px; }
   .speaker-carousel-track .speaker-card { flex-basis: 100%; }
   .carousel-nav { align-items: flex-end; }
   .carousel-hint { max-width: 150px; }
