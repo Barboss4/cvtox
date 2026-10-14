@@ -437,7 +437,16 @@ committee: [
   }
 ],
 
-posters: [],
+posters: [
+  { edition: "VIII CVTox", year: 2025, image: "" },
+  { edition: "VII CVTox", year: 2023, image: "" },
+  { edition: "VI CVTox", year: 2019, image: "" },
+  { edition: "V CVTox", year: 2017, image: "" },
+  { edition: "IV CVTox", year: 2015, image: "" },
+  { edition: "III CVTox", year: 2013, image: "" },
+  { edition: "II CVTox", year: 2011, image: "" },
+  { edition: "I CVTox", year: 2009, image: "" }
+],
 
 sponsors: [
   {
