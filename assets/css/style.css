@@ -28,6 +28,7 @@ body {
 img { max-width: 100%; display: block; }
 a { color: inherit; }
 button, input, textarea { font: inherit; }
+.visually-hidden { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }
 
 .container { width: min(calc(100% - 32px), var(--container)); margin-inline: auto; }
 .section { padding: clamp(64px, 8vw, 108px) 0; }
@@ -174,7 +175,7 @@ body[data-page="home"] .section-head { margin-bottom: 24px; }
 .section-head h2, .page-hero h1 { margin: 0; color: var(--navy-950); font-size: clamp(2rem, 4vw, 3.7rem); line-height: 1.02; letter-spacing: -.035em; }
 .section-head p { color: var(--muted); margin: 14px 0 0; }
 
-.features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
 .feature-card, .speaker-card, .mini-card, .info-card { border: 1px solid var(--border); background: var(--white); border-radius: var(--radius); box-shadow: 0 10px 26px rgba(7,28,83,.06); transition: transform .28s ease, box-shadow .28s ease; }
 .feature-card:hover, .speaker-card:hover, .mini-card:hover, .info-card:hover { transform: translateY(-6px); box-shadow: 0 18px 38px rgba(7,28,83,.11); }
 .feature-card { padding: 26px; }

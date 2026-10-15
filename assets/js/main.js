@@ -110,7 +110,6 @@ setText(
   const highlights = document.querySelector("[data-highlights]");
   if (highlights) {
     const highlightIcons = [
-      `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5 12 3l8 2.5-8 2.5-8-2.5Zm2 2v7c3.5 2.7 8.5 2.7 12 0v-7M20 6v8" /></svg>`,
       `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="8" r="3" /><circle cx="17" cy="9" r="2.5" /><path d="M2.5 19c.5-4 2.4-6 5.5-6s5 2 5.5 6M14 14c3.8-.5 6.3 1.2 7 4.5" /></svg>`,
       `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v5l-5 9a2.5 2.5 0 0 0 2.2 4h9.6a2.5 2.5 0 0 0 2.2-4l-5-9V3M7.5 15h9" /><path d="m10 12 1.5 1.5L14 11" /></svg>`
     ];

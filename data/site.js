@@ -224,7 +224,7 @@ schedule: [
       },
       {
         time: "10:30–12:00",
-        title: "Pesticida em alimentos processados",
+        title: "Pesticidas em alimentos processados",
         speaker: "Larissa Silva",
         institution: "LabTox-UnB",
         type: ""
@@ -236,7 +236,7 @@ schedule: [
       },
       {
         time: "14:00–15:30",
-        title: "Poluentes orgânicos persistentes (POPs)",
+        title: "Poluentes Orgânicos Persistentes (POPs)",
         speaker: "Peter Rembischevski",
         institution: "ANVISA",
         type: ""
@@ -336,7 +336,7 @@ schedule: [
       },
       {
         time: "14:00–15:30",
-        title: "Cannabis para uso animal",
+        title: "Cannabis para uso em animais",
         speaker: "Prof. Antônio Raphael Teixeira Neto",
         institution: "FAV-UnB",
         type: ""
@@ -362,7 +362,7 @@ schedule: [
     items: [
       {
         time: "08:30–10:00",
-        title: "Novas substâncias psicoativas: O que há de novo?",
+        title: "Novas Substâncias Psicoativas: o que há de novo?",
         speaker: "Ettore Ferrari Jr.",
         institution: "Polícia Civil do DF",
         type: ""
