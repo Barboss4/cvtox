@@ -11,7 +11,7 @@ window.CVTOX_DATA = {
     location: "FS - UnB",
     city: "Brasília – DF",
     description:
-   "O CVTox reúne estudantes, pesquisadores e profissionais para discutir temas atuais em Toxicologia por meio de aulas, debates e atividades de integração.",
+      "O CVTox reúne estudantes, pesquisadores e profissionais para discutir temas atuais em Toxicologia por meio de aulas, debates e atividades de integração.",
     registrationPrice: "A definir",
     registrationPriceNote:    "O valor da inscrição será divulgado em breve.",
     registrationUrl: "#",
@@ -19,11 +19,11 @@ window.CVTOX_DATA = {
   },
 
   highlights: [
-    {
-      icon: "🎓",
-      title: "Aulas",
-      text: "Aulas com pesquisadores e profissionais convidados sobre diferentes áreas da Toxicologia."
-    },
+    // {
+    //   icon: "🎓",
+    //   title: "Aulas",
+    //   text: "Aulas com pesquisadores e profissionais convidados sobre diferentes áreas da Toxicologia."
+    // },
     {
       icon: "🤝",
       title: "Networking",
@@ -42,7 +42,7 @@ speakers: [
   {
     name: "Profª. Drª. Sue Gibbs",
     role: "Department of Molecular Cell Biology – Amsterdam University Medical Center, Holanda",
-    talk: "New Approach Metodologies (NAMs)",
+    talk: "New Approach Methodology (NAM)",
     photo: "assets/img/sue-gibbs.png",
     url: "https://pure.amsterdamumc.nl/en/persons/susan-gibbs/"
   },
@@ -112,9 +112,9 @@ speakers: [
   },
 
   {
-    name: "Me. Iuri Pereira",
+    name: "Me. Iuri Barbosa Pereira",
     role: "Laboratório de Toxicologia – Universidade de Brasília",
-    talk: "A ser definido",
+    talk: "Machine Learning na Toxicologia: predição de perigo",
     photo: "assets/img/iuri-barbosa-pereira.png",
     url: "http://lattes.cnpq.br/1963306207676404"
   },
@@ -162,10 +162,10 @@ schedule: [
     items: [
       {
         time: "08:30–10:00",
-        title: "NAMs",
+        title: "New Approach Methodology (NAM)",
         speaker: "Prof. Dr. Sue Gibbs",
         institution: "Amsterdam University Medical Center",
-        type: "Aula"
+        type: ""
       },
       {
         time: "10:00–10:30",
@@ -177,7 +177,7 @@ schedule: [
         title: "Precision Toxicology",
         speaker: "Prof. John Colbourne",
         institution: "University of Birmingham, Reino Unido",
-        type: "Aula"
+        type: ""
       },
       {
         time: "12:00–14:00",
@@ -186,10 +186,10 @@ schedule: [
       },
       {
         time: "14:00–15:30",
-        title: "A ser definido",
-        speaker: "Iuri Pereira",
+        title: "Machine Learning na Toxicologia: predição de perigo",
+        speaker: "Iuri Barbosa Pereira",
         institution: "LabTox-UnB",
-        type: "Aula"
+        type: ""
       },
       {
         time: "15:30–16:00",
@@ -201,7 +201,7 @@ schedule: [
         title: "Comunicação de risco",
         speaker: "Claudio Canales",
         institution: "German Federal Institute for Risk Assessment",
-        type: "Aula"
+        type: ""
       }
     ]
   },
@@ -215,7 +215,7 @@ schedule: [
         title: "Resíduos e contaminantes em peixes",
         speaker: "Jonas Paschoal",
         institution: "USP",
-        type: "Aula"
+        type: ""
       },
       {
         time: "10:00–10:30",
@@ -227,7 +227,7 @@ schedule: [
         title: "Pesticida em alimentos processados",
         speaker: "Larissa Silva",
         institution: "LabTox-UnB",
-        type: "Aula"
+        type: ""
       },
       {
         time: "12:00–14:00",
@@ -239,7 +239,7 @@ schedule: [
         title: "Poluentes orgânicos persistentes (POPs)",
         speaker: "Peter Rembischevski",
         institution: "ANVISA",
-        type: "Aula"
+        type: ""
       },
       {
         time: "15:30–16:00",
@@ -251,7 +251,7 @@ schedule: [
         title: "Risco/benefício",
         speaker: "Sara Monteiro",
         institution: "Technical University of Denmark, Dinamarca",
-        type: "Aula"
+        type: ""
       }
     ]
   },
@@ -265,7 +265,7 @@ schedule: [
         title: "Disruptores endócrinos",
         speaker: "Prof. Angélica Amorim Amato",
         institution: "Departamento de Farmácia – UnB",
-        type: "Aula"
+        type: ""
       },
       {
         time: "10:00–10:30",
@@ -277,7 +277,7 @@ schedule: [
         title: "Estudos pré-clínicos para registro de medicamentos",
         speaker: "A ser definido",
         institution: "ANVISA",
-        type: "Aula"
+        type: ""
       },
       {
         time: "12:00–14:00",
@@ -289,7 +289,7 @@ schedule: [
         title: "A ser definido",
         speaker: "A ser definido",
         institution: "",
-        type: "Aula"
+        type: ""
       },
       {
         time: "15:30–16:00",
@@ -301,7 +301,7 @@ schedule: [
         title: "A ser definido",
         speaker: "A ser definido",
         institution: "",
-        type: "Aula"
+        type: ""
       }
     ]
   },
@@ -315,7 +315,7 @@ schedule: [
         title: "Influência das condições de cultivo nos padrões de crescimento da Cannabis",
         speaker: "Sabrina Bartz Pereira",
         institution: "Departamento de Botânica – UnB",
-        type: "Aula"
+        type: ""
       },
       {
         time: "10:00–10:30",
@@ -327,7 +327,7 @@ schedule: [
         title: "Determinação de canabinoides em plantas e óleos por LC-MS/MS",
         speaker: "Agatha Beatriz M. de Souza",
         institution: "LabTox-UnB",
-        type: "Aula"
+        type: ""
       },
       {
         time: "12:00–14:00",
@@ -339,7 +339,7 @@ schedule: [
         title: "Cannabis para uso animal",
         speaker: "Prof. Antônio Raphael Teixeira Neto",
         institution: "FAV-UnB",
-        type: "Aula"
+        type: ""
       },
       {
         time: "15:30–16:00",
@@ -351,7 +351,7 @@ schedule: [
         title: "A ser definido",
         speaker: "A ser definido",
         institution: "",
-        type: "Aula"
+        type: ""
       }
     ]
   },
@@ -365,7 +365,7 @@ schedule: [
         title: "Novas substâncias psicoativas: O que há de novo?",
         speaker: "Ettore Ferrari Jr.",
         institution: "Polícia Civil do DF",
-        type: "Aula"
+        type: ""
       },
       {
         time: "10:00–10:30",
@@ -377,7 +377,7 @@ schedule: [
         title: "Falsificação de medicamentos",
         speaker: "Diana Brito da Justa Neves",
         institution: "Polícia Federal",
-        type: "Aula"
+        type: ""
       },
       {
         time: "12:00–14:00",
@@ -389,7 +389,7 @@ schedule: [
         title: "A ser definido",
         speaker: "A ser definido",
         institution: "",
-        type: "Aula"
+        type: ""
       },
       {
         time: "15:30–16:00",
@@ -436,18 +436,34 @@ committee: [
     name: "Marcela",
     role: "Fotografia",
     photo: "assets/img/Marcela.png"
+  },
+  {
+    name: "Lana",
+    role: "Organização",
+    photo: "assets/img/Lana.png"
+  },
+  {
+    name: "Cauã Jhonnata",
+    role: "Organização",
+    photo: "assets/img/Cauã.png"
+  },
+  {
+    name: "Marielly",
+    role: "Organização",
+    photo: "assets/img/Marielly.png"
   }
 ],
 
 posters: [
-  { edition: "VIII CVTox", year: 2025, image: "" },
-  { edition: "VII CVTox", year: 2023, image: "" },
-  { edition: "VI CVTox", year: 2019, image: "" },
-  { edition: "V CVTox", year: 2017, image: "" },
-  { edition: "IV CVTox", year: 2015, image: "" },
-  { edition: "III CVTox", year: 2013, image: "" },
-  { edition: "II CVTox", year: 2011, image: "" },
-  { edition: "I CVTox", year: 2009, image: "" }
+  { edition: "IX CVTox", year: 2027, image: "assets/img/CVTox_09.png", featured: true },
+  { edition: "VIII CVTox", year: 2025, image: "assets/img/CVTox_08.png" },
+  { edition: "VII CVTox", year: 2023, image: "assets/img/CVTox_07.png" },
+  { edition: "VI CVTox", year: 2019, image: "assets/img/CVTox_06.png" },
+  { edition: "V CVTox", year: 2017, image: "assets/img/CVTox_05.png" },
+  { edition: "IV CVTox", year: 2015, image: "assets/img/CVTox_04.png" },
+  { edition: "III CVTox", year: 2013, image: "assets/img/CVTox_03.png" },
+  { edition: "II CVTox", year: 2011, image: "assets/img/CVTox_02.png" },
+  { edition: "I CVTox", year: 2009, image: "assets/img/CVTox_01.png" }
 ],
 
 sponsors: [

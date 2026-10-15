@@ -129,11 +129,11 @@ setText(
     .sort((a, b) => Number(b.year) - Number(a.year));
   if (posterSection && posters && posterItems.length) {
     posters.innerHTML = posterItems.map(item => item.image ? `
-      <a class="poster-card" href="${esc(item.image)}" target="_blank" rel="noopener">
+      <article class="poster-card${item.featured ? " poster-card-featured" : ""}">
         <img src="${esc(item.image)}" alt="Pôster da ${esc(item.edition)}, ${esc(item.year)}" loading="lazy" />
         <span><strong>${esc(item.edition)}</strong><small>${esc(item.year)}</small></span>
-      </a>` : `
-      <article class="poster-card poster-card-empty">
+      </article>` : `
+      <article class="poster-card poster-card-empty${item.featured ? " poster-card-featured" : ""}">
         <div class="poster-placeholder">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6V3Z"/><path d="M15 3v4h4M9 12h6M9 16h6"/></svg>
           <p>Pôster não adicionado</p>

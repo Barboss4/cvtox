@@ -163,6 +163,7 @@ body[data-page="home"] .section-head { margin-bottom: 24px; }
 .poster-card:hover img { transform: scale(1.035); }
 .poster-card span { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 16px 18px; }
 .poster-card small { color: var(--muted); }
+.poster-card-featured { grid-column: 1 / -1; justify-self: center; width: min(100%, 340px); }
 .poster-placeholder { display: grid; place-content: center; justify-items: center; gap: 12px; width: 100%; aspect-ratio: 3 / 4; color: var(--muted); background: var(--mist); }
 .poster-placeholder svg { width: 42px; fill: none; stroke: var(--green); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 .poster-placeholder p { margin: 0; font-size: .9rem; }
