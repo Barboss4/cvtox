@@ -68,7 +68,7 @@ speakers: [
     role: "Laboratório de Toxicologia – Universidade de Brasília",
     talk: "Pesticidas em alimentos processados",
     photo: "assets/img/larissa-silva.png",
-    url: ""
+    url: "https://lattes.cnpq.br/2866888388519619"
   },
 
   {
