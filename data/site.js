@@ -474,7 +474,12 @@ sponsors: [
     logo: "assets/img/patrocinadores/Labtox.png",
     url: "https://www.toxicologia.unb.br/textos.php?id=9&nome=olaboratorio"
   },
-
+  {
+    name: "SCIEX",
+    category: "Patrocínio",
+    logo: "assets/img/Sciex.png",
+    url: "https://sciex.com/"
+  }
 ],
 
 
