@@ -12,10 +12,9 @@ window.CVTOX_DATA = {
     city: "Brasília – DF",
     description:
       "O CVTox reúne estudantes, pesquisadores e profissionais para discutir temas atuais em Toxicologia por meio de aulas, debates e atividades de integração.",
-    registrationPrice: "A definir",
-    registrationPriceNote:    "O valor da inscrição será divulgado em breve.",
-    registrationUrl: "#",
-    registrationLabel: "Inscrições em breve"
+    registrationPrice: "R$ 120,00",
+    registrationUrl: "#atualizacoes",
+    registrationLabel: "Receba atualizações"
   },
 
   highlights: [
@@ -348,9 +347,7 @@ schedule: [
       },
       {
         time: "16:00–17:30",
-        title: "A ser definido",
-        speaker: "A ser definido",
-        institution: "",
+        title: "Palestra ANVISA",
         type: ""
       }
     ]
@@ -362,9 +359,7 @@ schedule: [
     items: [
       {
         time: "08:30–10:00",
-        title: "Novas Substâncias Psicoativas: o que há de novo?",
-        speaker: "Ettore Ferrari Jr.",
-        institution: "Polícia Civil do DF",
+        title: "Palestra SCIEX",
         type: ""
       },
       {
@@ -374,9 +369,9 @@ schedule: [
       },
       {
         time: "10:30–12:00",
-        title: "Falsificação de medicamentos",
-        speaker: "Diana Brito da Justa Neves",
-        institution: "Polícia Federal",
+        title: "Novas Substâncias Psicoativas: o que há de novo?",
+        speaker: "Ettore Ferrari Jr.",
+        institution: "Polícia Civil do DF",
         type: ""
       },
       {
@@ -386,9 +381,9 @@ schedule: [
       },
       {
         time: "14:00–15:30",
-        title: "A ser definido",
-        speaker: "A ser definido",
-        institution: "",
+        title: "Falsificação de medicamentos",
+        speaker: "Diana Brito da Justa Neves",
+        institution: "Polícia Federal",
         type: ""
       },
       {

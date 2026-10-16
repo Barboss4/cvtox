@@ -96,16 +96,64 @@
   data.event.registrationPrice
 );
 
-setText(
-  "[data-registration-price-note]",
-  data.event.registrationPriceNote
-);
-
   document.querySelectorAll("[data-registration-cta]").forEach(cta => {
     cta.textContent = data.event.registrationLabel;
     cta.href = data.event.registrationUrl;
     if (data.event.registrationUrl === "#") cta.setAttribute("aria-disabled", "true");
   });
+
+  const updatesForm = document.querySelector("[data-updates-form]");
+  if (updatesForm) {
+    const status = updatesForm.querySelector("[data-updates-status]");
+    const submitButton = updatesForm.querySelector('button[type="submit"]');
+    const submitLabel = submitButton?.textContent.trim() || "Enviar";
+
+    updatesForm.addEventListener("submit", async event => {
+      event.preventDefault();
+
+      if (!updatesForm.reportValidity()) return;
+
+      const formData = new FormData(updatesForm);
+      formData.append("event", data.event.edition);
+
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "Enviando...";
+      }
+
+      if (status) {
+        status.dataset.state = "loading";
+        status.textContent = "Enviando seus dados...";
+      }
+
+      try {
+        const response = await fetch(updatesForm.action, {
+          method: "POST",
+          body: formData,
+          headers: { Accept: "application/json" }
+        });
+
+        if (!response.ok) throw new Error("Não foi possível enviar o formulário.");
+
+        updatesForm.reset();
+
+        if (status) {
+          status.dataset.state = "success";
+          status.textContent = "Cadastro enviado! Você receberá as próximas atualizações do CVTox.";
+        }
+      } catch (error) {
+        if (status) {
+          status.dataset.state = "error";
+          status.textContent = "Não foi possível enviar agora. Tente novamente em alguns instantes.";
+        }
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = submitLabel;
+        }
+      }
+    });
+  }
 
   const highlights = document.querySelector("[data-highlights]");
   if (highlights) {

@@ -64,12 +64,8 @@
             <span>Valor da inscrição</span>
 
             <strong data-registration-price>
-              A definir
+              R$ 120,00
             </strong>
-
-            <p data-registration-price-note>
-              O valor da inscrição será divulgado em breve.
-            </p>
 
           </div>
 
@@ -82,12 +78,114 @@
               data-registration-cta
               href="#"
             >
-              Inscrições em breve
+              Receba atualizações
             </a>
 
           </div>
 
         </div>
+
+      </div>
+    </section>
+
+
+    <!-- Cadastro para atualizações -->
+    <section class="section section-soft updates-section" id="atualizacoes">
+      <div class="container updates-layout">
+
+        <div class="updates-copy">
+          <p class="eyebrow">Fique por dentro</p>
+          <h2>Receba atualizações do IX CVTox</h2>
+          <p>
+            Deixe seus dados para receber avisos sobre a abertura das inscrições,
+            a programação e outras novidades do evento.
+          </p>
+          <p class="updates-disclaimer">
+            Este cadastro demonstra interesse, mas não garante vaga nem substitui
+            a inscrição oficial.
+          </p>
+        </div>
+
+        <form
+          class="updates-form"
+          data-updates-form
+          action="https://formspree.io/f/mzedyqqk"
+          method="post"
+        >
+          <div class="form-field form-field-full">
+            <label for="updates-name">Nome completo</label>
+            <input
+              id="updates-name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              required
+            >
+          </div>
+
+          <div class="form-field form-field-full">
+            <label for="updates-email">E-mail</label>
+            <input
+              id="updates-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              inputmode="email"
+              required
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="updates-institution">Instituição ou empresa</label>
+            <input
+              id="updates-institution"
+              name="institution"
+              type="text"
+              autocomplete="organization"
+              placeholder="Opcional"
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="updates-profile">Perfil</label>
+            <select id="updates-profile" name="profile" required>
+              <option value="">Selecione</option>
+              <option>Estudante de graduação</option>
+              <option>Estudante de pós-graduação</option>
+              <option>Docente ou pesquisador(a)</option>
+              <option>Profissional</option>
+              <option>Outro</option>
+            </select>
+          </div>
+
+          <div class="form-field form-field-full">
+            <label for="updates-interest">Área de interesse</label>
+            <input
+              id="updates-interest"
+              name="interest"
+              type="text"
+              placeholder="Ex.: toxicologia clínica, ambiental ou forense"
+            >
+          </div>
+
+          <label class="consent-field form-field-full">
+            <input name="consent" type="checkbox" value="Sim" required>
+            <span>
+              Concordo em fornecer estes dados para receber comunicações sobre o CVTox.
+            </span>
+          </label>
+
+          <div class="form-actions form-field-full">
+            <button class="btn btn-primary" type="submit">
+              Quero receber atualizações
+            </button>
+            <p class="form-helper">
+              Seus dados serão encaminhados à organização do evento pelo Formspree.
+            </p>
+          </div>
+
+          <p class="form-status form-field-full" data-updates-status aria-live="polite"></p>
+        </form>
 
       </div>
     </section>
