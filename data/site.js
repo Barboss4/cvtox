@@ -90,7 +90,7 @@ speakers: [
     name: "Agatha Beatriz M. de Souza",
     role: "Laboratório de Toxicologia – Universidade de Brasília",
     talk: "Determinação de canabinoides em plantas e óleos por LC-MS/MS",
-    photo: "assets/img/Agatha.png",
+    photo: "assets/img/Agatha-beatriz.png",
     url: "http://lattes.cnpq.br/3483072173940735"
   },
 
