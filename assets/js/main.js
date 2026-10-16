@@ -15,14 +15,20 @@
 
   const links = [
     ["home", "Início", `${base}index.html`],
-    ["posteres", "Pôsteres", `${base}posteres.html`],
     ["programacao", "Programação", `${base}programacao.html`],
     ["palestrantes", "Palestrantes", `${base}palestrantes.html`],
     ["inscricoes", "Inscrições", `${base}inscricoes.html`],
     ["local", "Local", `${base}local.html`],
-    ["comissao", "Comissão", `${base}comissao.html`],
     ["contato", "Contato", `${base}contato.html`]
   ];
+  const aboutLinks = [
+    ["posteres", "Pôsteres", `${base}posteres.html`],
+    ["fotos", "Fotos", `${base}fotos.html`],
+    ["comissao", "Comissão", `${base}comissao.html`]
+  ];
+  const aboutActive = aboutLinks.some(([id]) => page === id);
+  const renderNavLink = ([id, label, href]) =>
+    `<a class="${page === id ? "active" : ""}" href="${href}"${page === id ? ' aria-current="page"' : ""}>${label}</a>`;
 
   const header = document.querySelector("[data-site-header]");
   if (header) {
@@ -37,7 +43,18 @@
             <span></span><span></span><span></span>
           </button>
           <nav id="main-nav" class="main-nav" aria-label="Navegação principal">
-            ${links.map(([id, label, href]) => `<a class="${page === id ? "active" : ""}" href="${href}">${label}</a>`).join("")}
+            ${renderNavLink(links[0])}
+            ${links.slice(1, 5).map(renderNavLink).join("")}
+            <div class="nav-dropdown${aboutActive ? " active" : ""}">
+              <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="about-submenu">
+                <span>Sobre</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5" /></svg>
+              </button>
+              <div id="about-submenu" class="nav-submenu">
+                ${aboutLinks.map(renderNavLink).join("")}
+              </div>
+            </div>
+            ${renderNavLink(links[5])}
           </nav>
         </div>
       </header>`;
@@ -66,15 +83,42 @@
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.querySelector(".main-nav");
   if (toggle && nav) {
+    const dropdown = nav.querySelector(".nav-dropdown");
+    const dropdownToggle = nav.querySelector(".nav-dropdown-toggle");
+    const closeDropdown = () => {
+      dropdown?.classList.remove("open");
+      dropdownToggle?.setAttribute("aria-expanded", "false");
+    };
+
     toggle.addEventListener("click", () => {
       const open = toggle.getAttribute("aria-expanded") === "true";
       toggle.setAttribute("aria-expanded", String(!open));
       nav.classList.toggle("open", !open);
+      if (open) closeDropdown();
     });
+
+    dropdownToggle?.addEventListener("click", () => {
+      const open = dropdownToggle.getAttribute("aria-expanded") === "true";
+      dropdownToggle.setAttribute("aria-expanded", String(!open));
+      dropdown?.classList.toggle("open", !open);
+    });
+
     nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
       nav.classList.remove("open");
       toggle.setAttribute("aria-expanded", "false");
+      closeDropdown();
     }));
+
+    document.addEventListener("click", event => {
+      if (dropdown && !dropdown.contains(event.target)) closeDropdown();
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key !== "Escape") return;
+      const wasOpen = dropdownToggle?.getAttribute("aria-expanded") === "true";
+      closeDropdown();
+      if (wasOpen) dropdownToggle?.focus();
+    });
   }
 
   const setText = (selector, value) => {
@@ -188,6 +232,24 @@
         <span><strong>${esc(item.edition)}</strong><small>${esc(item.year)}</small></span>
       </article>`).join("");
     posterSection.hidden = false;
+  }
+
+  const eventPhotoGallery = document.querySelector("[data-event-photos]");
+  if (eventPhotoGallery) {
+    const eventPhotos = (data.eventPhotos || []).filter(item => item.image);
+    eventPhotoGallery.innerHTML = eventPhotos.length ? eventPhotos.map(item => `
+      <figure class="event-photo-card">
+        <img src="${esc(item.image)}" alt="${esc(item.alt || item.caption || `Foto da ${item.edition || "edição do CVTox"}`)}" loading="lazy" />
+        <figcaption>
+          <span><strong>${esc(item.edition || "CVTox")}</strong>${item.year ? `<small>${esc(item.year)}</small>` : ""}</span>
+          ${item.caption ? `<p>${esc(item.caption)}</p>` : ""}
+        </figcaption>
+      </figure>`).join("") : `
+      <div class="gallery-empty">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h3l1.5-2h7L17 7h3v12H4V7Z"/><circle cx="12" cy="13" r="4"/></svg>
+        <h2>Galeria em preparação</h2>
+        <p>As fotos das edições anteriores serão adicionadas em breve.</p>
+      </div>`;
   }
 
   const speakers = document.querySelector("[data-speakers]");

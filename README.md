@@ -16,6 +16,7 @@ Nesse arquivo você altera:
 - palestrantes;
 - programação;
 - comissão;
+- fotos das edições anteriores;
 - contatos.
 
 Assim você não precisa ficar mexendo em vários arquivos HTML.
@@ -31,6 +32,24 @@ photo: "assets/img/nome-da-pessoa.jpg"
 
 Na página inicial, os palestrantes aparecem em um carrossel responsivo. A página `palestrantes.html` continua mostrando todos em grade.
 
+## Fotos das edições anteriores
+
+1. Coloque as imagens em `assets/img/fotos/`.
+2. No `data/site.js`, adicione cada foto em `eventPhotos`:
+
+```js
+eventPhotos: [
+  {
+    image: "assets/img/fotos/encontro-2025.jpg",
+    edition: "VIII CVTox",
+    year: 2025,
+    caption: "Participantes durante uma das atividades do evento."
+  }
+]
+```
+
+Enquanto a lista estiver vazia, a página exibe uma mensagem informando que a galeria está em preparação.
+
 ## Estrutura
 
 - `index.html` — página inicial
@@ -38,6 +57,8 @@ Na página inicial, os palestrantes aparecem em um carrossel responsivo. A pági
 - `palestrantes.html` — convidados
 - `inscricoes.html` — inscrições
 - `local.html` — local
+- `posteres.html` — pôsteres das edições anteriores
+- `fotos.html` — galeria das edições anteriores
 - `comissao.html` — comissão organizadora
 - `contato.html` — contatos
 - `data/site.js` — conteúdo editável

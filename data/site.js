@@ -461,6 +461,8 @@ posters: [
   { edition: "I CVTox", year: 2009, image: "assets/img/CVTox_01.png" }
 ],
 
+eventPhotos: [],
+
 sponsors: [
   {
     name: "Universidade de Brasília",
