@@ -450,7 +450,7 @@ committee: [
 ],
 
 posters: [
-  { edition: "IX CVTox", year: 2027, image: "assets/img/CVTox_09.png", featured: true },
+//  { edition: "IX CVTox", year: 2027, image: "assets/img/CVTox_09.png", featured: true },
   { edition: "VIII CVTox", year: 2025, image: "assets/img/CVTox_08.png" },
   { edition: "VII CVTox", year: 2023, image: "assets/img/CVTox_07.png" },
   { edition: "VI CVTox", year: 2019, image: "assets/img/CVTox_06.png" },
