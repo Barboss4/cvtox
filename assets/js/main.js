@@ -237,19 +237,47 @@
   const eventPhotoGallery = document.querySelector("[data-event-photos]");
   if (eventPhotoGallery) {
     const eventPhotos = (data.eventPhotos || []).filter(item => item.image);
-    eventPhotoGallery.innerHTML = eventPhotos.length ? eventPhotos.map(item => `
-      <figure class="event-photo-card">
-        <img src="${esc(item.image)}" alt="${esc(item.alt || item.caption || `Foto da ${item.edition || "edição do CVTox"}`)}" loading="lazy" />
-        <figcaption>
-          <span><strong>${esc(item.edition || "CVTox")}</strong>${item.year ? `<small>${esc(item.year)}</small>` : ""}</span>
-          ${item.caption ? `<p>${esc(item.caption)}</p>` : ""}
-        </figcaption>
-      </figure>`).join("") : `
-      <div class="gallery-empty">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h3l1.5-2h7L17 7h3v12H4V7Z"/><circle cx="12" cy="13" r="4"/></svg>
-        <h2>Galeria em preparação</h2>
-        <p>As fotos das edições anteriores serão adicionadas em breve.</p>
-      </div>`;
+    const photoAlbums = posterItems.map(poster => ({
+      ...poster,
+      photos: eventPhotos.filter(photo => photo.edition === poster.edition)
+    }));
+
+    eventPhotoGallery.innerHTML = photoAlbums.map(album => {
+      const photoCount = album.photos.length;
+      const countLabel = photoCount
+        ? `${photoCount} ${photoCount === 1 ? "foto" : "fotos"}`
+        : "Fotos em breve";
+      const albumPhotos = photoCount ? `
+        <div class="event-photo-grid">
+          ${album.photos.map(photo => `
+            <figure class="event-photo-card">
+              <img src="${esc(photo.image)}" alt="${esc(photo.alt || photo.caption || `Foto da ${album.edition}`)}" loading="lazy" />
+              ${photo.caption ? `<figcaption><p>${esc(photo.caption)}</p></figcaption>` : ""}
+            </figure>`).join("")}
+        </div>` : `
+        <div class="album-empty">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h3l1.5-2h7L17 7h3v12H4V7Z"/><circle cx="12" cy="13" r="4"/></svg>
+          <p>As fotos desta edição serão adicionadas em breve.</p>
+        </div>`;
+
+      return `
+        <details class="photo-album">
+          <summary>
+            <div class="photo-album-cover">
+              ${album.image ? `<img src="${esc(album.image)}" alt="Capa do álbum da ${esc(album.edition)}" loading="lazy" />` : ""}
+              <span>${esc(countLabel)}</span>
+            </div>
+            <div class="photo-album-meta">
+              <div>
+                <p class="eyebrow">${esc(album.year)}</p>
+                <h2>${esc(album.edition)}</h2>
+              </div>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5" /></svg>
+            </div>
+          </summary>
+          <div class="photo-album-body">${albumPhotos}</div>
+        </details>`;
+    }).join("");
   }
 
   const speakers = document.querySelector("[data-speakers]");

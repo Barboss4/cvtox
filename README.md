@@ -35,7 +35,7 @@ Na página inicial, os palestrantes aparecem em um carrossel responsivo. A pági
 ## Fotos das edições anteriores
 
 1. Coloque as imagens em `assets/img/fotos/`.
-2. No `data/site.js`, adicione cada foto em `eventPhotos`:
+2. No `data/site.js`, adicione cada foto em `eventPhotos`, usando exatamente o nome da edição correspondente:
 
 ```js
 eventPhotos: [
@@ -48,7 +48,7 @@ eventPhotos: [
 ]
 ```
 
-Enquanto a lista estiver vazia, a página exibe uma mensagem informando que a galeria está em preparação.
+Os álbuns são criados automaticamente a partir das edições cadastradas em `posters`. O pôster vira a capa provisória do álbum e cada foto aparece no álbum indicado pelo campo `edition`. Enquanto um álbum estiver vazio, ele exibe “Fotos em breve”.
 
 ## Estrutura
 
