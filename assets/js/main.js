@@ -47,7 +47,7 @@
             ${links.slice(1, 5).map(renderNavLink).join("")}
             <div class="nav-dropdown${aboutActive ? " active" : ""}">
               <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="about-submenu">
-                <span>Sobre</span>
+                <span>O CVTox</span>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5" /></svg>
               </button>
               <div id="about-submenu" class="nav-submenu">
