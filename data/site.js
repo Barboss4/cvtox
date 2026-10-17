@@ -461,7 +461,20 @@ posters: [
   { edition: "I CVTox", year: 2009, image: "assets/img/CVTox_01.png" }
 ],
 
-eventPhotos: [],
+photoGallery: {
+  repository: "Barboss4/cvtox",
+  branch: "main",
+  albums: [
+    { edition: "VIII CVTox", year: 2025, folder: "assets/img/fotos/viii-cvtox", cover: "capa1" },
+    { edition: "VII CVTox", year: 2023, folder: "assets/img/fotos/vii-cvtox", cover: "capa2" },
+    { edition: "VI CVTox", year: 2019, folder: "assets/img/fotos/vi-cvtox", cover: "capa3" },
+    { edition: "V CVTox", year: 2017, folder: "assets/img/fotos/v-cvtox", cover: "capa4" },
+    { edition: "IV CVTox", year: 2015, folder: "assets/img/fotos/iv-cvtox", cover: "capa5" },
+    { edition: "III CVTox", year: 2013, folder: "assets/img/fotos/iii-cvtox", cover: "capa6" },
+    { edition: "II CVTox", year: 2011, folder: "assets/img/fotos/ii-cvtox", cover: "capa7" },
+    { edition: "I CVTox", year: 2009, folder: "assets/img/fotos/i-cvtox", cover: "capa8" }
+  ]
+},
 
 sponsors: [
   {

@@ -34,21 +34,20 @@ Na página inicial, os palestrantes aparecem em um carrossel responsivo. A pági
 
 ## Fotos das edições anteriores
 
-1. Coloque as imagens em `assets/img/fotos/`.
-2. No `data/site.js`, adicione cada foto em `eventPhotos`, usando exatamente o nome da edição correspondente:
+Cada edição tem uma pasta em `assets/img/fotos/`. Para atualizar a galeria, basta adicionar as imagens na pasta correspondente e enviá-las ao GitHub; não é necessário editar HTML ou JavaScript.
 
-```js
-eventPhotos: [
-  {
-    image: "assets/img/fotos/encontro-2025.jpg",
-    edition: "VIII CVTox",
-    year: 2025,
-    caption: "Participantes durante uma das atividades do evento."
-  }
-]
-```
+As capas seguem esta ordem:
 
-Os álbuns são criados automaticamente a partir das edições cadastradas em `posters`. O pôster vira a capa provisória do álbum e cada foto aparece no álbum indicado pelo campo `edition`. Enquanto um álbum estiver vazio, ele exibe “Fotos em breve”.
+- VIII CVTox: `viii-cvtox/capa1.jpg`
+- VII CVTox: `vii-cvtox/capa2.jpg`
+- VI CVTox: `vi-cvtox/capa3.jpg`
+- V CVTox: `v-cvtox/capa4.jpg`
+- IV CVTox: `iv-cvtox/capa5.jpg`
+- III CVTox: `iii-cvtox/capa6.jpg`
+- II CVTox: `ii-cvtox/capa7.jpg`
+- I CVTox: `i-cvtox/capa8.jpg`
+
+A extensão da capa também pode ser `.png`, `.webp`, `.jpeg` ou `.avif`. Todas as outras imagens presentes na pasta aparecem automaticamente dentro do álbum e podem ter qualquer nome.
 
 ## Estrutura
 

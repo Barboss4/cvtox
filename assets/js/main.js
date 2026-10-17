@@ -236,35 +236,38 @@
 
   const eventPhotoGallery = document.querySelector("[data-event-photos]");
   if (eventPhotoGallery) {
-    const eventPhotos = (data.eventPhotos || []).filter(item => item.image);
-    const photoAlbums = posterItems.map(poster => ({
-      ...poster,
-      photos: eventPhotos.filter(photo => photo.edition === poster.edition)
-    }));
+    const galleryConfig = data.photoGallery || {};
+    const albumConfigs = galleryConfig.albums || [];
+    const galleryStatus = document.querySelector("[data-photo-status]");
+    const imagePattern = /\.(avif|gif|jpe?g|png|webp)$/i;
+    const assetUrl = path => `${base}${path.split("/").map(encodeURIComponent).join("/")}`;
 
-    eventPhotoGallery.innerHTML = photoAlbums.map(album => {
+    const renderPhotoAlbums = (photoAlbums, state = "ready") => {
+      eventPhotoGallery.innerHTML = photoAlbums.map(album => {
       const photoCount = album.photos.length;
-      const countLabel = photoCount
+      const countLabel = state === "loading"
+        ? "Carregando..."
+        : photoCount
         ? `${photoCount} ${photoCount === 1 ? "foto" : "fotos"}`
         : "Fotos em breve";
       const albumPhotos = photoCount ? `
         <div class="event-photo-grid">
           ${album.photos.map(photo => `
             <figure class="event-photo-card">
-              <img src="${esc(photo.image)}" alt="${esc(photo.alt || photo.caption || `Foto da ${album.edition}`)}" loading="lazy" />
-              ${photo.caption ? `<figcaption><p>${esc(photo.caption)}</p></figcaption>` : ""}
+              <img src="${esc(assetUrl(photo.path))}" alt="Foto da ${esc(album.edition)}" loading="lazy" />
             </figure>`).join("")}
         </div>` : `
         <div class="album-empty">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h3l1.5-2h7L17 7h3v12H4V7Z"/><circle cx="12" cy="13" r="4"/></svg>
-          <p>As fotos desta edição serão adicionadas em breve.</p>
+          <p>${state === "loading" ? "Procurando as fotos desta edição..." : "As fotos desta edição serão adicionadas em breve."}</p>
         </div>`;
 
       return `
         <details class="photo-album">
           <summary>
-            <div class="photo-album-cover">
-              ${album.image ? `<img src="${esc(album.image)}" alt="Capa do álbum da ${esc(album.edition)}" loading="lazy" />` : ""}
+            <div class="photo-album-cover${album.coverPath ? "" : " photo-album-cover-empty"}">
+              <img src="${album.coverPath ? esc(assetUrl(album.coverPath)) : logoSrc}" alt="${album.coverPath ? `Capa do álbum da ${esc(album.edition)}` : `Capa ainda não adicionada para a ${esc(album.edition)}`}" loading="lazy" />
+              ${album.coverPath || state === "loading" ? "" : `<small>Adicione ${esc(album.cover)}.jpg</small>`}
               <span>${esc(countLabel)}</span>
             </div>
             <div class="photo-album-meta">
@@ -277,7 +280,51 @@
           </summary>
           <div class="photo-album-body">${albumPhotos}</div>
         </details>`;
-    }).join("");
+      }).join("");
+    };
+
+    const emptyAlbums = albumConfigs.map(album => ({ ...album, coverPath: "", photos: [] }));
+    renderPhotoAlbums(emptyAlbums, "loading");
+
+    const repository = String(galleryConfig.repository || "").split("/").map(encodeURIComponent).join("/");
+    const branch = encodeURIComponent(galleryConfig.branch || "main");
+    fetch(`https://api.github.com/repos/${repository}/git/trees/${branch}?recursive=1`, {
+      headers: { Accept: "application/vnd.github+json" }
+    })
+      .then(response => {
+        if (!response.ok) throw new Error("Não foi possível consultar as fotos.");
+        return response.json();
+      })
+      .then(payload => {
+        const tree = Array.isArray(payload.tree) ? payload.tree : [];
+        const photoAlbums = albumConfigs.map(album => {
+          const prefix = `${album.folder.replace(/\/$/, "")}/`;
+          const files = tree
+            .filter(item => item.type === "blob" && item.path.startsWith(prefix))
+            .filter(item => !item.path.slice(prefix.length).includes("/"))
+            .filter(item => imagePattern.test(item.path))
+            .sort((a, b) => a.path.localeCompare(b.path, "pt-BR", { numeric: true }));
+          const coverPath = files.find(item =>
+            item.path.split("/").pop().replace(/\.[^.]+$/, "").toLowerCase() === album.cover.toLowerCase()
+          )?.path || "";
+
+          return {
+            ...album,
+            coverPath,
+            photos: files.filter(item => item.path !== coverPath)
+          };
+        });
+
+        renderPhotoAlbums(photoAlbums);
+        if (galleryStatus) galleryStatus.hidden = true;
+      })
+      .catch(() => {
+        renderPhotoAlbums(emptyAlbums);
+        if (galleryStatus) {
+          galleryStatus.textContent = "Não foi possível carregar as fotos agora. Tente novamente em instantes.";
+          galleryStatus.hidden = false;
+        }
+      });
   }
 
   const speakers = document.querySelector("[data-speakers]");
