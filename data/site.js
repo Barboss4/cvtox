@@ -500,7 +500,7 @@ sponsors: [
 
   venue: {
     name: "Auditório 3 da Faculdade de Ciências da Saúde – UnB",
-    address: "Universidade de Brasília – Brasília, DF",
+    address: "Campus Universitário Darcy Ribeiro, Asa Norte – Brasília, DF, CEP 70910-900",
     note: "Mais informações sobre acesso ao local serão divulgadas em breve."
   },
 
