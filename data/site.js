@@ -360,7 +360,8 @@ schedule: [
       {
         time: "08:30–10:00",
         title: "Palestra SCIEX",
-        type: ""
+        type: "",
+        visible: false
       },
       {
         time: "10:00–10:30",
@@ -493,7 +494,8 @@ sponsors: [
     name: "SCIEX",
     category: "Patrocínio",
     logo: "assets/img/Sciex.png",
-    url: "https://sciex.com/"
+    url: "https://sciex.com/",
+    visible: false
   }
 ],
 

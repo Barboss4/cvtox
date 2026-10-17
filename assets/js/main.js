@@ -435,7 +435,7 @@ if (schedule) {
 
       <div class="schedule-list">
 
-        ${day.items.map(item => `
+        ${day.items.filter(item => item.visible !== false).map(item => `
 
           <div class="schedule-item">
 
@@ -498,7 +498,9 @@ const sponsors = document.querySelector("[data-sponsors]");
 
 if (sponsors && Array.isArray(data.sponsors)) {
 
-  const groupedSponsors = data.sponsors.reduce((groups, sponsor) => {
+  const groupedSponsors = data.sponsors
+    .filter(sponsor => sponsor.visible !== false)
+    .reduce((groups, sponsor) => {
 
     const category = sponsor.category || "Apoio";
 
