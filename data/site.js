@@ -63,6 +63,14 @@ speakers: [
   },
 
   {
+    name: "Me. Larissa Silva",
+    role: "Laboratório de Toxicologia – Universidade de Brasília",
+    talk: "Pesticidas em alimentos processados",
+    photo: "assets/img/Larissa-Silva.png",
+    url: "https://lattes.cnpq.br/2866888388519619"
+  },
+
+  {
     name: "Me. Sabrina Bartz Pereira",
     role: "Departamento de Botânica – Universidade de Brasília",
     talk: "Influência das condições de cultivo nos padrões de crescimento da Cannabis",
@@ -132,14 +140,6 @@ speakers: [
     talk: "Cannabis para uso em animais",
     photo: "assets/img/raphael.png",
     url: "http://lattes.cnpq.br/2368985735640767"
-  },
-
-  {
-    name: "Me. Larissa Silva",
-    role: "Laboratório de Toxicologia – Universidade de Brasília",
-    talk: "Pesticidas em alimentos processados",
-    photo: "",
-    url: "https://lattes.cnpq.br/2866888388519619"
   },
 
   {
