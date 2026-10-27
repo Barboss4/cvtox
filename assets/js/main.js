@@ -375,45 +375,87 @@
     `).join("");
   }
 
-  // Na home, todos os palestrantes ficam disponíveis em um carrossel horizontal.
+  // Na home, os palestrantes aparecem um por vez, com transição circular.
   // Na página Palestrantes, a mesma lista continua sendo exibida inteira em grade.
   const speakerCarousel = document.querySelector("[data-speaker-carousel]");
   if (speakerCarousel) {
     const viewport = speakerCarousel.querySelector("[data-carousel-viewport]");
-    const track = speakerCarousel.querySelector(".speaker-carousel-track");
     const prev = speakerCarousel.querySelector("[data-carousel-prev]");
     const next = speakerCarousel.querySelector("[data-carousel-next]");
     const status = speakerCarousel.querySelector("[data-carousel-status]");
     const cards = [...speakerCarousel.querySelectorAll(".speaker-card")];
+    let current = 0;
+    let autoplayTimer;
+    let isPointerOver = false;
+    let isFocusWithin = false;
+    const autoplayDelay = 3000;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    const cardStep = () => {
-      if (!cards.length) return 0;
-      const gap = parseFloat(getComputedStyle(track).gap) || 0;
-      return cards[0].getBoundingClientRect().width + gap;
+    const showSpeaker = index => {
+      if (!cards.length) return;
+      current = (index + cards.length) % cards.length;
+
+      cards.forEach((card, cardIndex) => {
+        const isActive = cardIndex === current;
+        card.classList.toggle("is-active", isActive);
+        card.setAttribute("aria-hidden", String(!isActive));
+
+        card.querySelectorAll("a, button").forEach(element => {
+          if (isActive) element.removeAttribute("tabindex");
+          else element.setAttribute("tabindex", "-1");
+        });
+      });
+
+      if (status) status.textContent = `${current + 1} de ${cards.length}`;
     };
 
-    const updateCarousel = () => {
-      if (!viewport || !cards.length) return;
-      const step = cardStep();
-      const current = step ? Math.round(viewport.scrollLeft / step) : 0;
-      const visible = step ? Math.max(1, Math.round((viewport.clientWidth + (parseFloat(getComputedStyle(track).gap) || 0)) / step)) : 1;
-      const lastVisible = Math.min(cards.length, current + visible);
-
-      if (status) status.textContent = `${current + 1}–${lastVisible} de ${cards.length}`;
-      if (prev) prev.disabled = viewport.scrollLeft <= 2;
-      if (next) next.disabled = viewport.scrollLeft >= viewport.scrollWidth - viewport.clientWidth - 2;
+    const move = direction => showSpeaker(current + direction);
+    const stopAutoplay = () => window.clearTimeout(autoplayTimer);
+    const scheduleAutoplay = () => {
+      stopAutoplay();
+      if (reduceMotion || document.hidden || isPointerOver || isFocusWithin || cards.length < 2) return;
+      autoplayTimer = window.setTimeout(() => {
+        move(1);
+        scheduleAutoplay();
+      }, autoplayDelay);
     };
 
-    const move = direction => {
-      if (!viewport) return;
-      viewport.scrollBy({ left: cardStep() * direction, behavior: "smooth" });
-    };
+    prev?.addEventListener("click", () => {
+      move(-1);
+      scheduleAutoplay();
+    });
+    next?.addEventListener("click", () => {
+      move(1);
+      scheduleAutoplay();
+    });
+    viewport?.addEventListener("keydown", event => {
+      if (event.target !== viewport || (event.key !== "ArrowLeft" && event.key !== "ArrowRight")) return;
+      event.preventDefault();
+      move(event.key === "ArrowLeft" ? -1 : 1);
+      scheduleAutoplay();
+    });
+    speakerCarousel.addEventListener("mouseenter", () => {
+      isPointerOver = true;
+      stopAutoplay();
+    });
+    speakerCarousel.addEventListener("mouseleave", () => {
+      isPointerOver = false;
+      scheduleAutoplay();
+    });
+    speakerCarousel.addEventListener("focusin", () => {
+      isFocusWithin = true;
+      stopAutoplay();
+    });
+    speakerCarousel.addEventListener("focusout", () => {
+      window.setTimeout(() => {
+        isFocusWithin = speakerCarousel.contains(document.activeElement);
+        scheduleAutoplay();
+      });
+    });
+    document.addEventListener("visibilitychange", scheduleAutoplay);
 
-    prev?.addEventListener("click", () => move(-1));
-    next?.addEventListener("click", () => move(1));
-    viewport?.addEventListener("scroll", () => requestAnimationFrame(updateCarousel), { passive: true });
-    window.addEventListener("resize", updateCarousel);
-    updateCarousel();
+    showSpeaker(0);
+    scheduleAutoplay();
   }
 
 const schedule = document.querySelector("[data-schedule]");
