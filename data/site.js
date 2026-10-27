@@ -363,9 +363,8 @@ schedule: [
     items: [
       {
         time: "08:30–10:00",
-        title: "Palestra SCIEX",
-        type: "",
-        visible: false
+        title: "A ser definido",
+        type: ""
       },
       {
         time: "10:00–10:30",

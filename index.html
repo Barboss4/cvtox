@@ -80,8 +80,8 @@
             <a class="btn btn-ghost" href="programacao.html">Ver programação</a>
           </div>
         </div>
-        <div class="hero-mark" aria-hidden="true">
-          <div class="logo-orbit"><img data-hero-logo alt="" /></div>
+          <div class="hero-mark" aria-hidden="true">
+          <div class="logo-orbit"><img data-hero-logo src="assets/img/cvtox-logo-transparent.png" alt="" /></div>
         </div>
       </div>
     </section>
@@ -110,14 +110,17 @@
           <a class="btn" style="border-color: var(--border); color: var(--navy-950)" href="palestrantes.html">Ver todos</a>
         </div>
         <div class="speaker-carousel" data-speaker-carousel>
-          <div class="speaker-carousel-viewport" data-carousel-viewport tabindex="0" aria-label="Apresentação de convidados. Use as setas para navegar.">
+          <div class="speaker-carousel-viewport" data-carousel-viewport tabindex="0" role="region" aria-roledescription="carrossel" aria-label="Apresentação de convidados. Use as setas para navegar.">
             <div class="speaker-carousel-track" data-speakers></div>
           </div>
           <div class="carousel-nav">
-            <div class="carousel-controls" aria-label="Controles do carrossel">
+            <div class="carousel-controls" role="group" aria-label="Controles do carrossel">
               <button class="carousel-btn" type="button" data-carousel-prev aria-label="Convidado anterior">←</button>
-              <span class="carousel-status" data-carousel-status aria-live="polite"></span>
+              <span class="carousel-status" data-carousel-status aria-live="off"></span>
               <button class="carousel-btn" type="button" data-carousel-next aria-label="Próximo convidado">→</button>
+              <button class="carousel-btn carousel-playback" type="button" data-carousel-playback aria-label="Pausar troca automática" aria-pressed="false" title="Pausar troca automática">
+                <span data-carousel-playback-icon aria-hidden="true">❚❚</span>
+              </button>
             </div>
           </div>
         </div>

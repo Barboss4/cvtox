@@ -383,13 +383,17 @@
     const prev = speakerCarousel.querySelector("[data-carousel-prev]");
     const next = speakerCarousel.querySelector("[data-carousel-next]");
     const status = speakerCarousel.querySelector("[data-carousel-status]");
+    const playback = speakerCarousel.querySelector("[data-carousel-playback]");
+    const playbackIcon = speakerCarousel.querySelector("[data-carousel-playback-icon]");
     const cards = [...speakerCarousel.querySelectorAll(".speaker-card")];
     let current = 0;
     let autoplayTimer;
     let isPointerOver = false;
     let isFocusWithin = false;
+    let allowAutoplayDuringInteraction = false;
     const autoplayDelay = 3000;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let isUserPaused = reduceMotion;
 
     const showSpeaker = index => {
       if (!cards.length) return;
@@ -411,9 +415,18 @@
 
     const move = direction => showSpeaker(current + direction);
     const stopAutoplay = () => window.clearTimeout(autoplayTimer);
+    const updatePlaybackControl = () => {
+      if (!playback) return;
+      const label = isUserPaused ? "Reproduzir troca automática" : "Pausar troca automática";
+      playback.setAttribute("aria-label", label);
+      playback.setAttribute("aria-pressed", String(isUserPaused));
+      playback.title = label;
+      if (playbackIcon) playbackIcon.textContent = isUserPaused ? "▶" : "❚❚";
+    };
     const scheduleAutoplay = () => {
       stopAutoplay();
-      if (reduceMotion || document.hidden || isPointerOver || isFocusWithin || cards.length < 2) return;
+      const interactionPaused = (isPointerOver || isFocusWithin) && !allowAutoplayDuringInteraction;
+      if (isUserPaused || document.hidden || interactionPaused || cards.length < 2) return;
       autoplayTimer = window.setTimeout(() => {
         move(1);
         scheduleAutoplay();
@@ -421,40 +434,54 @@
     };
 
     prev?.addEventListener("click", () => {
+      allowAutoplayDuringInteraction = false;
       move(-1);
       scheduleAutoplay();
     });
     next?.addEventListener("click", () => {
+      allowAutoplayDuringInteraction = false;
       move(1);
       scheduleAutoplay();
+    });
+    playback?.addEventListener("click", () => {
+      isUserPaused = !isUserPaused;
+      allowAutoplayDuringInteraction = !isUserPaused;
+      updatePlaybackControl();
+      if (isUserPaused) stopAutoplay();
+      else scheduleAutoplay();
     });
     viewport?.addEventListener("keydown", event => {
       if (event.target !== viewport || (event.key !== "ArrowLeft" && event.key !== "ArrowRight")) return;
       event.preventDefault();
+      allowAutoplayDuringInteraction = false;
       move(event.key === "ArrowLeft" ? -1 : 1);
       scheduleAutoplay();
     });
     speakerCarousel.addEventListener("mouseenter", () => {
       isPointerOver = true;
-      stopAutoplay();
+      if (!allowAutoplayDuringInteraction) stopAutoplay();
     });
     speakerCarousel.addEventListener("mouseleave", () => {
       isPointerOver = false;
+      if (!isFocusWithin) allowAutoplayDuringInteraction = false;
       scheduleAutoplay();
     });
-    speakerCarousel.addEventListener("focusin", () => {
+    speakerCarousel.addEventListener("focusin", event => {
       isFocusWithin = true;
-      stopAutoplay();
+      if (event.target !== playback) allowAutoplayDuringInteraction = false;
+      if (!allowAutoplayDuringInteraction) stopAutoplay();
     });
     speakerCarousel.addEventListener("focusout", () => {
       window.setTimeout(() => {
         isFocusWithin = speakerCarousel.contains(document.activeElement);
+        if (!isFocusWithin && !isPointerOver) allowAutoplayDuringInteraction = false;
         scheduleAutoplay();
       });
     });
     document.addEventListener("visibilitychange", scheduleAutoplay);
 
     showSpeaker(0);
+    updatePlaybackControl();
     scheduleAutoplay();
   }
 

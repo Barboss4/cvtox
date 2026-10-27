@@ -462,6 +462,8 @@ body[data-page="home"] .section-head { margin-bottom: 24px; }
 .carousel-btn:hover:not(:disabled) { background: var(--navy-950); color: var(--white); }
 .carousel-btn:disabled { opacity: .35; cursor: default; }
 .carousel-status { min-width: 78px; text-align: center; color: var(--muted); font-size: .9rem; font-weight: 800; }
+.carousel-playback { margin-left: 6px; font-size: .95rem; }
+.carousel-playback[aria-pressed="true"] { color: var(--white); background: var(--navy-950); }
 
 @media (prefers-reduced-motion: reduce) {
   .speaker-carousel-track .speaker-card { transition: none; }
