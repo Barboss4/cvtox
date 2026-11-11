@@ -158,6 +158,7 @@ speakers: [
 
 
 
+
 schedule: [
   {
     day: "Segunda-feira",
@@ -289,9 +290,9 @@ schedule: [
       },
       {
         time: "14:00–15:30",
-        title: "A ser definido",
+        title: "Toxicidade de pesticidas neonicotinoides",
         speaker: "A ser definido",
-        institution: "",
+        institution: "Bayer",
         type: ""
       },
       {
@@ -351,7 +352,9 @@ schedule: [
       },
       {
         time: "16:00–17:30",
-        title: "Palestra ANVISA",
+        title: "Avaliação de segurança de medicamentos",
+        speaker: "A ser definido",
+        institution: "ANVISA",
         type: ""
       }
     ]
@@ -363,7 +366,9 @@ schedule: [
     items: [
       {
         time: "08:30–10:00",
-        title: "A ser definido",
+        title: "Análise de drogas em material biológico por LC-MS",
+        speaker: "A ser definido",
+        institution: "SCIEX",
         type: ""
       },
       {
@@ -403,6 +408,7 @@ schedule: [
     ]
   }
 ],
+
 
 
 committee: [
