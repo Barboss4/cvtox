@@ -498,21 +498,21 @@ sponsors: [
     category: "Patrocínio",
     logo: "assets/img/Sciex.png",
     url: "https://sciex.com/",
-    visible: false
+    visible: true
   },
   {
-    name: "Nova Analítica",
+    name: "Anvisa",
     category: "Patrocínio",
-    logo: "assets/img/patrocinadores/nova-analitica.png",
-    url: "https://www.analiticaweb.com.br/",
-    visible: false
+    logo: "assets/img/patrocinadores/anvisa.png",
+    url: "https://www.gov.br/anvisa/",
+    visible: true
   },
   {
-    name: "Baly Energéticos",
+    name: "Bayer",
     category: "Patrocínio",
-    logo: "assets/img/patrocinadores/baly.svg",
-    url: "https://balybrasil.com.br/",
-    visible: false
+    logo: "assets/img/patrocinadores/Bayer.webp",
+    url: "https://www.bayer.com.br/",
+    visible: true
   }
 ],
 
