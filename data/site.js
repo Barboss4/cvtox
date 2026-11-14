@@ -12,7 +12,11 @@ window.CVTOX_DATA = {
     city: "Brasília – DF",
     description:
       "O CVTox reúne estudantes, pesquisadores e profissionais para discutir temas atuais em Toxicologia por meio de aulas, debates e atividades de integração.",
-    registrationPrice: "R$ xxx,00",
+    registrationPrices: [
+      { category: "Estudantes de graduação", price: "R$ 130,00" },
+      { category: "Estudantes de pós-graduação", price: "R$ 300,00" },
+      { category: "Profissionais", price: "R$ 500,00" }
+    ],
     registrationUrl: "#atualizacoes",
     registrationLabel: "Receba atualizações"
   },

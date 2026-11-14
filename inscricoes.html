@@ -74,14 +74,25 @@
           </p>
 
 
-          <!-- Valor -->
+          <!-- Valores -->
           <div class="registration-price">
 
-            <span>Valor da inscrição</span>
+            <span>Valores das inscrições</span>
 
-            <strong data-registration-price>
-              R$ 120,00
-            </strong>
+            <div class="registration-price-list" data-registration-prices>
+              <div class="registration-price-item">
+                <span>Estudantes de graduação</span>
+                <strong>R$ 130,00</strong>
+              </div>
+              <div class="registration-price-item">
+                <span>Estudantes de pós-graduação</span>
+                <strong>R$ 300,00</strong>
+              </div>
+              <div class="registration-price-item">
+                <span>Profissionais</span>
+                <strong>R$ 500,00</strong>
+              </div>
+            </div>
 
           </div>
 
@@ -128,6 +139,9 @@
           action="https://formspree.io/f/mzedyqqk"
           method="post"
         >
+          <input type="hidden" name="_subject" value="Novo cadastro para atualizações do IX CVTox">
+          <input type="hidden" name="event" value="IX CVTox">
+
           <div class="form-field form-field-full">
             <label for="updates-name">Nome completo</label>
             <input
@@ -196,11 +210,10 @@
               Quero receber atualizações
             </button>
             <p class="form-helper">
-              Seus dados serão encaminhados à organização do evento pelo Formspree.
+              Seus dados serão encaminhados à organização pelo Formspree, que poderá
+              solicitar uma verificação de segurança antes de concluir o envio.
             </p>
           </div>
-
-          <p class="form-status form-field-full" data-updates-status aria-live="polite"></p>
         </form>
 
       </div>

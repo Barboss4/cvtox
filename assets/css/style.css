@@ -749,13 +749,31 @@ a.sponsor-card:hover {
   letter-spacing: 0.1em;
 }
 
-.registration-price > strong {
-  display: block;
+.registration-price-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
 
+.registration-price-item {
+  display: grid;
+  gap: 6px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--white);
+}
+
+.registration-price-item span {
+  color: var(--muted);
+  font-size: .88rem;
+  font-weight: 700;
+}
+
+.registration-price-item strong {
   color: var(--navy-950);
-
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
-
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
   line-height: 1.2;
 }
 
@@ -883,27 +901,18 @@ a.sponsor-card:hover {
   transform: none;
 }
 
-.form-helper,
-.form-status {
+.form-helper {
   margin: 0;
   color: var(--muted);
   font-size: .82rem;
   line-height: 1.45;
 }
 
-.form-status:not(:empty) {
-  padding: 12px 14px;
-  border-radius: 10px;
-  color: var(--navy-800);
-  background: rgba(79, 157, 104, .12);
-}
-
-.form-status[data-state="error"] {
-  color: #7b1f2a;
-  background: rgba(181, 55, 69, .11);
-}
-
 @media (max-width: 820px) {
+  .registration-price-list {
+    grid-template-columns: 1fr;
+  }
+
   .updates-layout {
     grid-template-columns: 1fr;
   }
